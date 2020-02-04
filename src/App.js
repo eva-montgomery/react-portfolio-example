@@ -1,25 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+import Footer from './Footer';
+import MainContent from './MainContent';
+
+const websiteHeader = `Amazing Web Developerer`
+
+const websiteCopy = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quam soluta impedit a magnam consequuntur eius id deleniti ut sequi reprehenderit ea minima dolorem consequatur, tempore eaque nemo. Maxime, fuga.`;
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Header 
+      title={websiteHeader}
+      />
+      <MainContent 
+        content={websiteCopy}
+      />
+     {/* {React.createElement(
+        MainContent, 
+      {
+      'content': websiteCopy
+      }
+      )
+    }  */}
+      <Footer />
+    </React.Fragment>
   );
 }
 
