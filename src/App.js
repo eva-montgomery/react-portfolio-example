@@ -4,6 +4,7 @@ import Header from './Header';
 import Nav from './Nav';
 import Footer from './Footer';
 import MainContent from './MainContent';
+import Blog from './Blog';
 
 import React from "react";
 import {
@@ -34,31 +35,27 @@ function App() {
   return (
 
     <Router>
-
+      <Header title={websiteHeader} />
         <Nav 
           links={linkNames}
         />
-        {/* <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
-            <li><Link to="/blog/list">Blog List</Link></li>
-        </ul> */}
         <Switch> 
-        <Route path="/blog/list"> 
-            <BlogList /> 
+
+        <Route path="/blog/:blogId"> 
+            <Blog /> 
           </Route>
 
           <Route exact path="/"> 
             <Home /> 
           </Route>
         
-          <Route path="/blog"> 
-            <Blog /> 
-          </Route>
+        
 
 
 
         </Switch>
+
+        <Footer />
     </Router>
   );
 }
@@ -68,9 +65,7 @@ function Home() {
 }
 
 
-function Blog() {
-  return <h1>Welcome to the blog!</h1>
-}
+
 
 function BlogList() {
   return <p>This is the blog list!</p>
