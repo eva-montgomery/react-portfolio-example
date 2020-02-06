@@ -1,12 +1,12 @@
-// import logo from './logo.svg';
+import React from 'react';
+import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
-import Nav from './Nav';
-import Footer from './Footer';
 import MainContent from './MainContent';
 import Blog from './Blog';
+import Footer from './Footer';
+import Nav from './Nav';
 
-import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,11 +15,11 @@ import {
 } from "react-router-dom";
 
 
-const websiteHeader = `Amazing Web Developer!`
+const websiteCopy = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla perferendis similique, facilis culpa neque optio atque mollitia ea molestiae tenetur, repellendus exercitationem delectus voluptatum a numquam repellat. Sapiente, est blanditiis.`;
 
-const websiteCopy = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quam soluta impedit a magnam consequuntur eius id deleniti ut sequi reprehenderit ea minima dolorem consequatur, tempore eaque nemo. Maxime, fuga.`;
+const websiteTitle = `Amazing Web Developerererer!`;
 
-const linkNames = [ 
+const linkNames = [
   {
     text: 'Home',
     path: '/'
@@ -28,47 +28,39 @@ const linkNames = [
     text: 'Blog',
     path: '/blog'
   }
-
 ];
 
 function App() {
   return (
-
     <Router>
-      <Header title={websiteHeader} />
-        <Nav 
-          links={linkNames}
-        />
-        <Switch> 
+      <Header title={websiteTitle} />
+      <Nav 
+        links={linkNames}
+      />
 
-        <Route path="/blog/:blogId"> 
-            <Blog /> 
-          </Route>
+      <Switch>
+        <Route path="/blog/:blogId">
+          <Blog />
+        </Route>
+        <Route path="/blog">
+          <Blog />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
 
-          <Route exact path="/"> 
-            <Home /> 
-          </Route>
-        
-        
-
-
-
-        </Switch>
-
-        <Footer />
+      <Footer />
     </Router>
   );
 }
 
 function Home() {
-  return <h1>You are home!</h1>
+  return <h1>You are Home</h1>;
 }
 
-
-
-
 function BlogList() {
-  return <p>This is the blog list!</p>
+  return <p>This is the blog list</p>
 }
 
 export default App;

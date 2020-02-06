@@ -21,7 +21,7 @@ function Blog() {
         <div>
             <ul>
                 {blogPosts.map((b, i) => (
-                    <li><Link to={i}>{b}</Link></li>
+                    <li><Link to={`/blog/${i}`}>{b}</Link></li>
                 ))}
             </ul>
             <p>
